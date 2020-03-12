@@ -73,7 +73,7 @@ const costs$ = combineLatest([intervalTree$, generatedDates$])
     reduce(
       (accumulator, { moment, cost }) => {
         const currentCost = (accumulator[dateKey(moment)] ?? 0) + cost;
-        accumulator[dateKey(moment)] = roundTo(currentCost, 2);
+        accumulator[dateKey(moment)] = roundTo.down(currentCost, 2);
         return accumulator;
       },
       {} as { [key: string]: number },

@@ -1,5 +1,5 @@
 import { Observable, range } from 'rxjs';
-import { map, mergeMap, share, tap } from 'rxjs/operators';
+import { map, mergeMap, share } from 'rxjs/operators';
 import { randomInteger } from './random-helper';
 
 const MAX_GENERATIONS_PER_DAY = 10;
@@ -46,9 +46,9 @@ export function daysInMonth(moment: number): number {
 }
 
 export function monthKey(moment: number): string {
-  return new Date(moment).toISOString().slice(0,7);
+  return new Date(moment).toISOString().slice(0, 7);
 }
 
 export function dateKey(moment: number): string {
-  return new Date(moment).toISOString().slice(0,10);
+  return new Date(moment).toISOString().slice(0, 10);
 }
